@@ -1,31 +1,29 @@
-# muplan
+# μPLAN: Summarizing using a Content Plan as Cross-Lingual Bridge
 
-TODO(b/325600876): Add a description for your new project, explain what is
-being released here, etc... Additional, the following sections are normally
-expected for all releases. Feel free to add additional sections if appropriate
-for your project.
+This repository includes the  plan-annotated data used in our [µPLAN paper](https://arxiv.org/abs/2305.14205) (EACL 2024).
 
-## Installation
+## Abstract
 
-Write instructions for how the user should install your code. The instructions
-should ideally be valid when copy-pasted. You can combine this with the Usage
-section if there's no separate installation step.
+Cross-lingual summarization aims to generate a summary in one language given input in a different language, allowing for the dissemination of relevant content among different language speaking populations.  The task is challenging mainly due to the paucity of cross-lingual datasets and the compounded difficulty of summarizing *and* translating.
+This work presents µPLAN, an approach to cross-lingual summarization that uses an intermediate planning step as a cross-lingual bridge. We formulate the plan as a sequence of entities capturing the summary's content and the order in which it should be communicated. Importantly, our plans abstract from surface form: using a multilingual knowledge base, we align entities to their canonical designation across languages and generate the summary conditioned on this cross-lingual bridge and the input. Automatic and human evaluation on the  XWikis dataset (across four language pairs) demonstrates that our planning objective achieves state-of-the-art performance in terms of informativeness and faithfulness. Moreover, µPLAN models improve the *zero-shot* transfer to new cross-lingual language pairs compared to baselines without a planning component.
 
-## Usage
 
-Write example usage of your code. The instructions should ideally be valid when
-copy-pasted, and will be used by your technical reviewer to verify that your
-package functions correctly.
+## Data
+The plan-annotated dataset is available in JSONL format at: [link](link-to-GCP-bucket-tbd). This dataset is derived from [XWikis (Perez-Beltrachini
+and Lapata, 2021)](https://github.com/lauhaide/clads). Each *(document, summary)* pair is annotated with a multilingual content plan, stored under the data key `plan`.
+
+## Models
+All the models in the paper are based on the [mT5 model (Xue et al., 2021)](https://aclanthology.org/2021.naacl-main.41.pdf) using the checkpoints available at: [link](https://github.com/google-research/multilingual-t5?tab=readme-ov-file#released-model-checkpoints).
 
 ## Citing this work
+If you use any of the material here, please cite the following paper:
 
-Add citation details here, usually a pastable BibTeX snippet:
-
-```latex
-@article{publicationname,
-      title={Publication Name},
-      author={Author One and Author Two and Author Three},
-      year={2024},
+```
+@article{huot2023muplan,
+  title={$\mu$PLAN: Summarizing using a Content Plan as Cross-Lingual Bridge},
+  author={Huot, Fantine and Maynez, Joshua and Alberti, Chris and Amplayo, Reinald Kim and Agrawal, Priyanka and Fierro, Constanza and Narayan, Shashi and Lapata, Mirella},
+  journal={arXiv preprint arXiv:2305.14205},
+  year={2023}
 }
 ```
 
