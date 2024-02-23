@@ -9,7 +9,7 @@ This work presents µPLAN, an approach to cross-lingual summarization that uses 
 
 
 ## Data
-The plan-annotated dataset is available in JSONL format at: [link](link-to-GCP-bucket-tbd). This dataset is derived from [XWikis (Perez-Beltrachini
+The plan-annotated dataset is available in JSONL format at: [link](https://console.cloud.google.com/storage/browser/xwikis-with-plans). This dataset is derived from [XWikis (Perez-Beltrachini
 and Lapata, 2021)](https://github.com/lauhaide/clads). Each *(document, summary)* pair is annotated with a multilingual content plan, stored under the data key `plan`.
 
 ## Models
