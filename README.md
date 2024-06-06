@@ -1,6 +1,6 @@
 # μPLAN: Summarizing using a Content Plan as Cross-Lingual Bridge
 
-This repository includes the  plan-annotated data used in our [µPLAN paper](https://arxiv.org/abs/2305.14205) (EACL 2024).
+This repository includes the  plan-annotated data used in our [µPLAN paper](https://aclanthology.org/2024.eacl-long.131/) (EACL 2024).
 
 ## Abstract
 
@@ -10,7 +10,7 @@ This work presents µPLAN, an approach to cross-lingual summarization that uses 
 
 ## Data
 The plan-annotated dataset is available in JSONL format at: [link](https://console.cloud.google.com/storage/browser/xwikis-with-plans). This dataset is derived from [XWikis (Perez-Beltrachini
-and Lapata, 2021)](https://github.com/lauhaide/clads). Each *(document, summary)* pair is annotated with a multilingual content plan, stored under the data key `plan`.
+and Lapata, 2021)](https://github.com/lauhaide/clads). Each *(document, summary)* pair is annotated with a multilingual content plan, stored under the header key `plan`.
 
 ## Models
 All the models in the paper are based on the [mT5 model (Xue et al., 2021)](https://aclanthology.org/2021.naacl-main.41.pdf) using the checkpoints available at: [link](https://github.com/google-research/multilingual-t5?tab=readme-ov-file#released-model-checkpoints).
@@ -19,11 +19,26 @@ All the models in the paper are based on the [mT5 model (Xue et al., 2021)](http
 If you use any of the material here, please cite the following paper:
 
 ```
-@article{huot2023muplan,
-  title={$\mu$PLAN: Summarizing using a Content Plan as Cross-Lingual Bridge},
-  author={Huot, Fantine and Maynez, Joshua and Alberti, Chris and Amplayo, Reinald Kim and Agrawal, Priyanka and Fierro, Constanza and Narayan, Shashi and Lapata, Mirella},
-  journal={arXiv preprint arXiv:2305.14205},
-  year={2023}
+@inproceedings{huot-etal-2024-mplan,
+    title = "$\mu${PLAN}: Summarizing using a Content Plan as Cross-Lingual Bridge",
+    author = "Huot, Fantine  and
+      Maynez, Joshua  and
+      Alberti, Chris  and
+      Amplayo, Reinald Kim  and
+      Agrawal, Priyanka  and
+      Fierro, Constanza  and
+      Narayan, Shashi  and
+      Lapata, Mirella",
+    editor = "Graham, Yvette  and
+      Purver, Matthew",
+    booktitle = "Proceedings of the 18th Conference of the European Chapter of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    month = mar,
+    year = "2024",
+    address = "St. Julian{'}s, Malta",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2024.eacl-long.131",
+    pages = "2146--2163",
+    abstract = "Cross-lingual summarization aims to generate a summary in one languagegiven input in a different language, allowing for the dissemination ofrelevant content among different language speaking populations. Thetask is challenging mainly due to the paucity of cross-lingualdatasets and the compounded difficulty of summarizing andtranslating.This work presents $\mu$PLAN, an approach to cross-lingual summarization that uses an intermediate planning step as a cross-lingual bridge. We formulate the plan as a sequence of entities capturing thesummary{'}s content and the order in which it should becommunicated. Importantly, our plans abstract from surface form: usinga multilingual knowledge base, we align entities to their canonicaldesignation across languages and generate the summary conditioned onthis cross-lingual bridge and the input. Automatic and human evaluation on the XWikis dataset (across four language pairs) demonstrates that our planning objective achieves state-of-the-art performance interms of informativeness and faithfulness. Moreover, $\mu$PLAN modelsimprove the zero-shot transfer to new cross-lingual language pairscompared to baselines without a planning component.",
 }
 ```
 
